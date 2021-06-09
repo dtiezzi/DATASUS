@@ -16,3 +16,13 @@ Note the script is designed to download the SIA-PA data. You can change the `$DA
 ```bash
 mkdir dbfiles
 ```
+
+## Using OpenMP
+
+You can use OpenMP with `datasus.c` for multi-thread download. The default year is `2010`. If you want to modify, change de global variable `year`. To compile, you can use the gcc compiler and setup the number of threads:
+
+```bash
+gcc -o datasus.out -fopenmp datasus.c
+export OMP_NUM_THREADS=16 # for 16 threads
+nohup ./datasus.c &> nohup_Cdatasus.out & # running in the backgroung
+```
