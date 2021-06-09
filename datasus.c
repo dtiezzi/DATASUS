@@ -13,7 +13,7 @@ int main() {
     char ad[80] = "ftp://ftp.datasus.gov.br/dissemin/publicos/SIASUS/200801_/Dados/";
     int i, j;
 
-    #pragma omp parallel for private(i,j)
+    #pragma omp parallel for private(j) schedule(dynamic,4)
     for (i=0; i<=26; i++) {
         for (j=0; j<=11; j++) {
             char url[120] = "";
