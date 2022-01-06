@@ -23,6 +23,6 @@ You can use OpenMP with `datasus.c` for multi-thread download. The default year 
 
 ```bash
 gcc -o datasus.out -fopenmp datasus.c
-export OMP_NUM_THREADS=16 # for 16 threads
+export OMP_NUM_THREADS=4 # for 4 threads
 nohup ./datasus.c &> nohup_Cdatasus.out & # running in the backgroung
 ```
